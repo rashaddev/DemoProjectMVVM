@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXX-VF-vWc">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Demo1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeView" customModule="Demo1" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-ea-TU4">
+                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Enter City Name" translatesAutoresizingMaskIntoConstraints="NO" id="Gha-Fm-0ji">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="O2Z-t6-HYU"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5me-X2-7Oi"/>
+                                    <constraint firstItem="Gha-Fm-0ji" firstAttribute="top" secondItem="PBL-ea-TU4" secondAttribute="top" id="98v-m5-lKg"/>
+                                    <constraint firstItem="Gha-Fm-0ji" firstAttribute="leading" secondItem="PBL-ea-TU4" secondAttribute="leading" id="Lba-L8-7xV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gha-Fm-0ji" secondAttribute="trailing" id="iNr-F9-1I6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hry-Lg-HzJ">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UoL-3X-COg">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="697"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="W4T-rV-ogR"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="pzu-iw-ftk"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="UoL-3X-COg" firstAttribute="leading" secondItem="Hry-Lg-HzJ" secondAttribute="leading" id="0os-kt-TmN"/>
+                                    <constraint firstAttribute="trailing" secondItem="UoL-3X-COg" secondAttribute="trailing" id="EM6-z6-dyO"/>
+                                    <constraint firstAttribute="bottom" secondItem="UoL-3X-COg" secondAttribute="bottom" id="fab-Iy-w0m"/>
+                                    <constraint firstItem="UoL-3X-COg" firstAttribute="top" secondItem="Hry-Lg-HzJ" secondAttribute="top" id="jhu-Fi-cCU"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Gsf-za-w43">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PBL-ea-TU4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pk7-WG-E8H"/>
+                            <constraint firstItem="Gsf-za-w43" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WEK-O0-qzk"/>
+                            <constraint firstItem="Gsf-za-w43" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fKz-7M-tzc"/>
+                            <constraint firstItem="Hry-Lg-HzJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lxZ-YK-I0v"/>
+                            <constraint firstItem="PBL-ea-TU4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nVE-7y-s2T"/>
+                            <constraint firstItem="Hry-Lg-HzJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rpA-46-Z7f"/>
+                            <constraint firstAttribute="bottom" secondItem="Hry-Lg-HzJ" secondAttribute="bottom" id="tlr-fw-isJ"/>
+                            <constraint firstItem="PBL-ea-TU4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vU4-Rb-xNB"/>
+                            <constraint firstItem="Hry-Lg-HzJ" firstAttribute="top" secondItem="PBL-ea-TU4" secondAttribute="bottom" constant="8" symbolic="YES" id="zyb-pq-TUT"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="activityIndicator" destination="Gsf-za-w43" id="DNP-y2-JUe"/>
+                            <outlet property="homeDetailTableView" destination="UoL-3X-COg" id="MJ6-Je-A2M"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather" id="4Ps-h1-Yy6"/>
+                    <connections>
+                        <outlet property="homeView" destination="8bC-Xf-vdC" id="ZL9-AS-NgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.44274809160299" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bXD-KY-iZS">
+            <objects>
+                <navigationController storyboardIdentifier="NavBar" automaticallyAdjustsScrollViewInsets="NO" id="IXX-VF-vWc" customClass="NavigationController" customModule="Demo1" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mKv-4Z-oJa">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="themeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7sd-lX-Ugj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLN-ab-bqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55.725190839694655" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="themeColor"/>
+    <resources>
+        <namedColor name="themeColor">
+            <color red="0.93333333333333335" green="0.7686274509803922" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
